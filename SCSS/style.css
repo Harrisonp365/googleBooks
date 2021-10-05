@@ -1,0 +1,27 @@
+.header {
+  text-align: center;
+  margin-top: 4rem;
+}
+.header__h1 {
+  font-size: 3rem;
+}
+.header__h2 {
+  font-size: 2rem;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  padding: 4rem;
+}
+.searchBar__input {
+  width: 30%;
+  height: 2rem;
+  border-radius: 10px;
+}
+.searchBar__submit {
+  margin-left: 0.2rem;
+  border-radius: 10px;
+  width: 8%;
+  font-size: 1.1rem;
+}
