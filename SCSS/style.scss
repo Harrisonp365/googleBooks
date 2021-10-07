@@ -29,3 +29,15 @@
     font-size: 1.1rem;
   }
 }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 2px solid rgb(7, 5, 5);
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

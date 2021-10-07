@@ -25,3 +25,14 @@
   width: 8%;
   font-size: 1.1rem;
 }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 2px solid #070505;
+}
+.gallery__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
