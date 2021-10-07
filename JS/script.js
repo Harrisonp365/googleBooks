@@ -5,14 +5,56 @@ const API_URL = "https://www.googleapis.com/books/v1/volumes?q=";
 const getAPIData = async(searchValue) => {
     const response = await fetch(`${API_URL}${searchValue}`);
     const bookData = await response.json();
-    //add check and error if no response
-    if(bookData === "" || bookData === null) {
-        alert("There are no books that match your search plese try again")
+    if(!response.ok){
+        throw new Error (`Failed to fetch data: ${response.status}`);
     }
+    
+    const bookTitle = bookData.map(i => {
+        return i.items.volumeInfo.title;
+    });
+
+    const bookImage = bookData.map(i => {
+        return i.items.volumeInfo.imageLinks.thumbnail;
+    });
+
+    const bookAuthor = bookData.map(i => {
+        return i.items.volumeInfo.authors;
+    });
+
+    displayData(bookTitle);
+
     //Title: console.log(bookData.items[0].volumeInfo.title);
     //Image: console.log(bookData.items[0].volumeInfo.imageLinks.thumbnail);
     //1st Author: console.log(bookData.items[0].volumeInfo.authors[0]);
     return bookData;
+}
+
+const displayData = (containerId) => {
+    const containerId = document.getElementById("#gallery");
+
+    if(!containerId){
+        return;
+    }
+
+    getAPIData().then(cards => {
+        //call creates here
+    }).catch(e => {
+        console.log(e);
+    })
+}
+
+const createTitleElement = (card) => {
+    const titleElem = document.createElement("h3");
+    return titleElem;
+}
+
+const createImgElement = (card) => {
+    const imgElem = document.createElement("img");
+    imgElem.setAttribute("src", `${bookImage}`);
+}
+
+const createDescElement = (card) => {
+    const descElem = document.createElement("p");
 }
 
 const searchBtn = document.querySelector(".searchBar__submit");
@@ -24,57 +66,10 @@ searchBtn.addEventListener("click", async (e) => {
         alert("Please enter a search value")
     }
 
-    const books = await getAPIData(searchValue);
+    await getAPIData(searchValue);
 
-    const bookTitle = books.items;
-    //console.log(bookTitle.volumeInfo.value);
-    
-    let bookCard = "";
-    bookTitle.map((val) => {
-        console.log(val.volumeInfo.imageLinks.thumbnail);
-       bookCard += `
-       <div class="card">
-        <img class="card__image" src="" alt="${val.volumeInfo.title}" />
-        <div class="card__title">${val.volumeInfo.title}</div>
-        <div class="card__author">${val.volumeInfo.authors}</div>
-      </div>`;
-        return bookCard;
-    });
-    document.getElementById("#gallery").innerHTML = bookCard;
-    
+    return books;
 });
-
-
-
-// searchBtn.addEventListener("click", async (e) => {
-//     e.preventDefault();
-    
-//     let searchValue = document.querySelector(".searchBar__input").value;
-//     if(searchValue === "" || searchValue === null) {
-//         alert("Please enter a search value")
-//     }
-
-//     const books = await getAPIData(searchValue);
-
-//     const bookTitle = books.items;
-
-//     const cardTitleItems = bookTitle.map((title) => {
-//         const element = document.createElement("p");
-//         const titleText = `Book Title: ${title.volumeInfo.title}`;
-//         //console.log(titleText); //map works
-//         const textNode = document.createTextNode(titleText);
-//         element.appendChild(textNode);
-//         console.log(element);
-//         return element;
-//     });
-//     const list = document.querySelectorAll(".card__title");
-//     const append = parent => child => parent.appendChild(element)
-//     cardTitleItems.forEach(append(list));
-
-//     // console.log(bookTitle);
-//     //appendChild("div", bookTitle, document.querySelectorAll(".card__title"));
-//     return books;
-// });
 
 // const assignTitle = (books) => {
 //     const bookTitle = books.items;
