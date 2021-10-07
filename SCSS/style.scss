@@ -31,13 +31,16 @@
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border: 2px solid rgb(7, 5, 5);
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
 
-  &__card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgb(7, 5, 5);
+  width: 22%;
 }

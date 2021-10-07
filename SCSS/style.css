@@ -27,12 +27,16 @@
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border: 2px solid #070505;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
-.gallery__card {
+
+.card {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  border: 2px solid #070505;
+  width: 22%;
 }
