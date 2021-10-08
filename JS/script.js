@@ -51,9 +51,14 @@ const updateDisplay = async (obj) => {
         const cardTitleElem = document.createElement("h2");
         const cardAuthorElem = document.createElement("p");
 
+        cardElem.className = "card";
+        cardImageElem.className = "card__image";
+        cardTitleElem.className = "card__title";
+        cardAuthorElem.className = "card__author";
+
         cardImageElem.src = `${item.image}`
         const titleText = `${item.title}`;
-        const authorText = `${item.author}`;
+        const authorText = `Authors: ${item.author}`;
 
         const titleTextNode = document.createTextNode(titleText);
         const authorTextNode = document.createTextNode(authorText);

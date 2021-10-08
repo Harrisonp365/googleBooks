@@ -1,0 +1,19 @@
+.searchBar {
+  display: flex;
+  justify-content: center;
+  padding: 4rem;
+
+  &__input {
+    width: 30%;
+    height: 2rem;
+
+    &:hover {
+      border: 1px solid aquamarine;
+    }
+  }
+
+  &__submit {
+    width: 8%;
+    font-size: 1.1rem;
+  }
+}

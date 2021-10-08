@@ -5,7 +5,7 @@ const getAPIData = async(searchValue) => {
     const bookData = await response.json();
     //add check and error if no response
     if(bookData === "" || bookData === null) {
-        alert("There are no books that match your search plese try again")
+        alert("There are no books that match your search please try again")
     }
     const html = bookData.items.map(items => {
         return `

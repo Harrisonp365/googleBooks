@@ -1,3 +1,12 @@
+@use "./modules/searchBar.scss";
+@use "./modules/card.scss";
+@use "./modules/gallery.scss";
+@use "./partials/palette";
+
+// body {
+//   background-color: palette.$primary-color;
+// }
+
 .header {
   text-align: center;
   margin-top: 4rem;
@@ -9,38 +18,4 @@
   &__h2 {
     font-size: 2rem;
   }
-}
-
-.searchBar {
-  display: flex;
-  justify-content: center;
-  padding: 4rem;
-
-  &__input {
-    width: 30%;
-    height: 2rem;
-    border-radius: 10px;
-  }
-
-  &__submit {
-    margin-left: 0.2rem;
-    border-radius: 10px;
-    width: 8%;
-    font-size: 1.1rem;
-  }
-}
-
-.gallery {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid rgb(7, 5, 5);
-  width: 22%;
 }

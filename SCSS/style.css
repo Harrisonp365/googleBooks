@@ -1,3 +1,55 @@
+.searchBar {
+  display: flex;
+  justify-content: center;
+  padding: 4rem;
+}
+.searchBar__input {
+  width: 30%;
+  height: 2rem;
+}
+.searchBar__input:hover {
+  border: 1px solid aquamarine;
+}
+.searchBar__submit {
+  width: 8%;
+  font-size: 1.1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgray;
+  border: 3px solid pink;
+  border-radius: 12px;
+  padding: 10px;
+  margin: 15px;
+}
+.card__image {
+  width: 30%;
+  height: 75%;
+  border-radius: 8px;
+}
+.card__title {
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+}
+.card__author {
+  font-size: 1.3rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 40vw);
+  justify-content: center;
+}
+
+img {
+  width: 150px;
+  height: 200px;
+}
+
 .header {
   text-align: center;
   margin-top: 4rem;
@@ -7,36 +59,4 @@
 }
 .header__h2 {
   font-size: 2rem;
-}
-
-.searchBar {
-  display: flex;
-  justify-content: center;
-  padding: 4rem;
-}
-.searchBar__input {
-  width: 30%;
-  height: 2rem;
-  border-radius: 10px;
-}
-.searchBar__submit {
-  margin-left: 0.2rem;
-  border-radius: 10px;
-  width: 8%;
-  font-size: 1.1rem;
-}
-
-.gallery {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #070505;
-  width: 22%;
 }

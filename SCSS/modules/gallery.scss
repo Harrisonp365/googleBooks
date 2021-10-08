@@ -1,0 +1,9 @@
+@use "./mixins";
+.gallery {
+  @include mixins.grid;
+}
+
+img {
+  width: 150px;
+  height: 200px;
+}
