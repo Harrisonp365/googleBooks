@@ -26,7 +26,7 @@
   font-size: 1.1rem;
 }
 
-#gallery {
+.gallery {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
