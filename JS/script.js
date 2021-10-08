@@ -18,6 +18,7 @@ const dataToObj = async (data) => {
             title: item.volumeInfo.title,
             author: item.volumeInfo.authors,
             image: item.volumeInfo?.imageLinks?.thumbnail ?? "JS/resources/no-book-image.png",
+            description: item.volumeInfo.description,
         };
 
         if(item.volumeInfo.authors > 1)
@@ -50,25 +51,31 @@ const updateDisplay = async (obj) => {
         const cardImageElem = document.createElement("img");
         const cardTitleElem = document.createElement("h2");
         const cardAuthorElem = document.createElement("p");
+        const cardDescElem = document.createElement("p");
 
         cardElem.className = "card";
         cardImageElem.className = "card__image";
         cardTitleElem.className = "card__title";
         cardAuthorElem.className = "card__author";
+        cardDescElem.className = "card__desc";
 
         cardImageElem.src = `${item.image}`
         const titleText = `${item.title}`;
         const authorText = `Authors: ${item.author}`;
+        const descText = `${item.description}`;
 
         const titleTextNode = document.createTextNode(titleText);
         const authorTextNode = document.createTextNode(authorText);
+        const descTextNode = document.createTextNode(descText);
 
         cardTitleElem.appendChild(titleTextNode);
         cardAuthorElem.appendChild(authorTextNode);
+        cardDescElem.appendChild(descTextNode);
 
         cardElem.appendChild(cardImageElem);
         cardElem.appendChild(cardTitleElem);
         cardElem.appendChild(cardAuthorElem);
+        cardElem.appendChild(cardDescElem);
 
         return cardElem;
     });
