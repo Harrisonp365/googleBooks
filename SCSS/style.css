@@ -52,6 +52,13 @@
   grid-template-columns: repeat(2, 40vw);
   justify-content: center;
 }
+@media (max-width: 760px) {
+  .gallery {
+    display: grid;
+    grid-template-columns: 75vw;
+    justify-content: center;
+  }
+}
 
 img {
   width: 150px;

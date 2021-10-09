@@ -1,4 +1,6 @@
 @use "./mixins";
+//@use "../partials/devices";
+
 .gallery {
   @include mixins.grid;
 }
