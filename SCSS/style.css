@@ -36,6 +36,7 @@
 }
 .card__image:hover {
   transform: scale(1.1);
+  cursor: pointer;
 }
 .card__title {
   font-family: Arial, Helvetica, sans-serif;
@@ -78,4 +79,18 @@ img {
 .header__h2 {
   font-size: 2rem;
   color: #4040da;
+}
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 15rem;
+  /* Full width */
+  height: 15rem;
 }
