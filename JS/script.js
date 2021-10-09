@@ -21,8 +21,17 @@ const dataToObj = async (data) => {
             description: item.volumeInfo.description,
         };
 
-        if(item.volumeInfo.authors > 1)
-            obj.author = item.volumeInfo.authors.join(", "); 
+        //More than one author then join authors
+        if(item.volumeInfo.authors && item.volumeInfo.authors > 1) {
+            obj.author = "Authors: " + item.volumeInfo.authors?.join(", "); 
+        }
+            
+        //Make desc only 200 chars long
+        if( item.volumeInfo.description !== undefined && item.volumeInfo.description.length > 200) {
+            const lastChar = item.volumeInfo.description.indexOf(".", 200);
+            //Append fullstop to the end of desc
+            obj.description = item.volumeInfo.description.slice(0, lastChar) + ".";
+        } 
           
         return obj;
     });
@@ -61,7 +70,7 @@ const updateDisplay = async (obj) => {
 
         cardImageElem.src = `${item.image}`
         const titleText = `${item.title}`;
-        const authorText = `Authors: ${item.author}`;
+        const authorText = `${item.author}`;
         const descText = `${item.description}`;
 
         const titleTextNode = document.createTextNode(titleText);

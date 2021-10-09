@@ -3,8 +3,7 @@
 
 .card {
   @include mixins.centerColumn;
-  background-color: palette.$primary-color;
-  border: 3px solid palette.$secondary-color;
+  border: 3px solid palette.$primary-color;
   border-radius: 12px;
   padding: 10px;
   margin: 15px;
@@ -13,6 +12,11 @@
     width: 30%;
     height: 75%;
     border-radius: 8px;
+    transition: transform .2s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__title {
@@ -22,5 +26,6 @@
 
   &__author {
     font-size: 1.3rem;
+    color: palette.$primary-text-color;
   }
 }

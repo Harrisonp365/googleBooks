@@ -2,20 +2,10 @@
 @use "./modules/card.scss";
 @use "./modules/gallery.scss";
 @use "./partials/palette";
+@use "./modules/footer.scss";
+@use "./modules/header.scss";
 
 // body {
 //   background-color: palette.$primary-color;
 // }
 
-.header {
-  text-align: center;
-  margin-top: 4rem;
-
-  &__h1 {
-    font-size: 3rem;
-  }
-
-  &__h2 {
-    font-size: 2rem;
-  }
-}

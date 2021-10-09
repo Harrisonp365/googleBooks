@@ -1,3 +1,4 @@
+@use "../partials/palette";
 .searchBar {
   display: flex;
   justify-content: center;
@@ -8,12 +9,16 @@
     height: 2rem;
 
     &:hover {
-      border: 1px solid aquamarine;
+      border: 2px solid palette.$primary-color;
     }
   }
 
   &__submit {
     width: 8%;
     font-size: 1.1rem;
+
+    &:hover{
+      border: 2px solid palette.$primary-color;
+    }
   }
 }

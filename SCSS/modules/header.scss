@@ -1,0 +1,17 @@
+@use "./mixins.scss";
+@use "../partials/palette";
+
+.header {
+    text-align: center;
+    margin-top: 4rem;
+  
+    &__h1 {
+      font-size: 3rem;
+    }
+  
+    &__h2 {
+      font-size: 2rem;
+      color: palette.$secondary-text-color;
+      //add different font
+    }
+  }

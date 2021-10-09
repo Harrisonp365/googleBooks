@@ -8,11 +8,14 @@
   height: 2rem;
 }
 .searchBar__input:hover {
-  border: 1px solid aquamarine;
+  border: 2px solid #4040da;
 }
 .searchBar__submit {
   width: 8%;
   font-size: 1.1rem;
+}
+.searchBar__submit:hover {
+  border: 2px solid #4040da;
 }
 
 .card {
@@ -20,8 +23,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #a09e9e;
-  border: 3px solid #09dd85;
+  border: 3px solid #4040da;
   border-radius: 12px;
   padding: 10px;
   margin: 15px;
@@ -30,6 +32,10 @@
   width: 30%;
   height: 75%;
   border-radius: 8px;
+  transition: transform 0.2s;
+}
+.card__image:hover {
+  transform: scale(1.1);
 }
 .card__title {
   font-family: Arial, Helvetica, sans-serif;
@@ -37,6 +43,7 @@
 }
 .card__author {
   font-size: 1.3rem;
+  color: green;
 }
 
 .gallery {
@@ -50,6 +57,17 @@ img {
   height: 200px;
 }
 
+.footer {
+  position: fixed;
+  width: 100%;
+  height: 5%;
+  left: 0;
+  bottom: 0;
+  background-color: gray;
+  color: white;
+  text-align: center;
+}
+
 .header {
   text-align: center;
   margin-top: 4rem;
@@ -59,4 +77,5 @@ img {
 }
 .header__h2 {
   font-size: 2rem;
+  color: #4040da;
 }
