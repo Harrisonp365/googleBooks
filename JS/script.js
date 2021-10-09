@@ -16,9 +16,9 @@ const dataToObj = async (data) => {
     const objArr = apiData.map((item) => {
         const obj = {
             title: item.volumeInfo.title,
-            author: item.volumeInfo.authors,
+            author: item.volumeInfo.authors ?? "Sorry we could not find an author",
             image: item.volumeInfo?.imageLinks?.thumbnail ?? "JS/resources/no-book-image.png",
-            description: item.volumeInfo.description,
+            description: item.volumeInfo.description ?? "There is no description for this book but we are sure it's great!",
         };
 
         //More than one author then join authors
@@ -35,7 +35,6 @@ const dataToObj = async (data) => {
           
         return obj;
     });
-    //console.log(objArr);
     return objArr;
 }
 
