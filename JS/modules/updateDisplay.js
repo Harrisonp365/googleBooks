@@ -1,5 +1,6 @@
-import dataToObj from "../modules/dataToObj";
-import getAPIData from "../modules/getAPIData";
+// import dataToObj from "../modules/dataToObj.js";
+// import getAPIData from "../modules/getAPIData.js";
+import removeAllElems from "./removeElement.js";
 
 const updateDisplay = async (obj) => {
     const cards = obj.map((item) => {
@@ -36,8 +37,10 @@ const updateDisplay = async (obj) => {
         return cardElem;
     });
 
-    const cardContainer = document.querySelector(".gallery")
+    const cardContainer = document.querySelector(".gallery");
+    removeAllElems(cardContainer);
     const append = (parent) => (child) => parent.appendChild(child);
+
     cards.forEach(append(cardContainer));
 }
 

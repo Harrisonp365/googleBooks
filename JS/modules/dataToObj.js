@@ -1,4 +1,4 @@
-import getAPIData from "../modules/getAPIData";
+import getAPIData from "../modules/getAPIData.js";
 
 const dataToObj = async (data) => {
     const apiData = await getAPIData(data);
